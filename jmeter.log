@@ -1,0 +1,369 @@
+2026-10-22 16:42:42,867 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-10-22 16:42:42,885 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2026-10-22 16:42:42,886 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2026-10-22 16:42:42,892 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: Version 5.6.3
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: java.version=21.0.13
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: os.name=Mac OS X
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: os.arch=aarch64
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: os.version=26.5.1
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: java.awt.headless=true
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-10-22 16:42:42,893 INFO o.a.j.JMeter: Available Processors =10
+2026-10-22 16:42:42,901 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-10-22 16:42:42,901 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-10-22 16:42:42,901 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2026-10-22 16:42:42,901 INFO o.a.j.JMeter: user.dir  =/Users/miracle/Documents/projects/java-web-app
+2026-10-22 16:42:42,901 INFO o.a.j.JMeter: PWD       =/Users/miracle/Documents/projects/java-web-app
+2026-10-22 16:42:42,904 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: miracles-MacBook-Air.local FullName: localhost
+2026-10-22 16:42:42,915 INFO o.a.j.s.FileServer: Default base='/Users/miracle/Documents/projects/java-web-app'
+2026-10-22 16:42:42,916 INFO o.a.j.s.FileServer: Set new base='/Users/miracle/Documents/projects/java-web-app/jmeter'
+2026-10-22 16:42:43,044 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-10-22 16:42:43,065 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-10-22 16:42:43,067 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-10-22 16:42:43,069 INFO o.a.j.s.SaveService: Loading file: jmeter/inventory-stress.jmx
+2026-10-22 16:42:43,107 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-22 16:42:43,107 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-22 16:42:43,108 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-22 16:42:43,108 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-10-22 16:42:43,108 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-10-22 16:42:43,108 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-10-22 16:42:43,142 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-10-22 16:42:43,151 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-10-22 16:42:43,151 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-22 16:42:43,151 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-10-22 16:42:43,154 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-10-22 16:42:43,154 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-10-22 16:42:43,183 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2026-10-22 16:42:43,446 INFO o.a.j.JMeter: Running test (1792658563446)
+2026-10-22 16:42:43,447 INFO o.a.j.e.StandardJMeterEngine: Starting setUp thread groups
+2026-10-22 16:42:43,447 INFO o.a.j.e.StandardJMeterEngine: Starting setUp ThreadGroup: 1 : Create stress product 
+2026-10-22 16:42:43,447 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Create stress product.
+2026-10-22 16:42:43,447 INFO o.a.j.e.StandardJMeterEngine: Test will stop on error
+2026-10-22 16:42:43,447 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2026-10-22 16:42:43,449 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-10-22 16:42:43,449 INFO o.a.j.e.StandardJMeterEngine: Waiting for all setup thread groups to exit
+2026-10-22 16:42:43,450 INFO o.a.j.t.JMeterThread: Thread started: Create stress product 1-1
+2026-10-22 16:42:43,462 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = miracles-MacBook-Air.local
+2026-10-22 16:42:43,466 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-10-22 16:42:43,467 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-10-22 16:42:43,467 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-10-22 16:42:43,467 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-10-22 16:42:43,467 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-10-22 16:42:44,163 INFO o.a.j.t.JMeterThread: Thread is done: Create stress product 1-1
+2026-10-22 16:42:44,163 INFO o.a.j.t.JMeterThread: Thread finished: Create stress product 1-1
+2026-10-22 16:42:44,166 INFO o.a.j.e.StandardJMeterEngine: All Setup Threads have ended
+2026-10-22 16:42:44,188 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Concurrent reservations
+2026-10-22 16:42:44,188 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Concurrent reservations.
+2026-10-22 16:42:44,188 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-10-22 16:42:44,189 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=10 delayedStart=false
+2026-10-22 16:42:44,190 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-1
+2026-10-22 16:42:44,216 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-10-22 16:42:44,216 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-10-22 16:42:44,295 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-2
+2026-10-22 16:42:44,391 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-3
+2026-10-22 16:42:44,491 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-4
+2026-10-22 16:42:44,590 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-5
+2026-10-22 16:42:44,694 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-6
+2026-10-22 16:42:44,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-7
+2026-10-22 16:42:44,895 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-8
+2026-10-22 16:42:44,990 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-9
+2026-10-22 16:42:45,094 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-10
+2026-10-22 16:42:45,191 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-11
+2026-10-22 16:42:45,293 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-12
+2026-10-22 16:42:45,394 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-13
+2026-10-22 16:42:45,494 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-14
+2026-10-22 16:42:45,593 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-15
+2026-10-22 16:42:45,690 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-16
+2026-10-22 16:42:45,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-17
+2026-10-22 16:42:45,892 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-18
+2026-10-22 16:42:45,995 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-19
+2026-10-22 16:42:46,096 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-20
+2026-10-22 16:42:46,194 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-21
+2026-10-22 16:42:46,295 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-22
+2026-10-22 16:42:46,396 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-23
+2026-10-22 16:42:46,495 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-24
+2026-10-22 16:42:46,594 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-25
+2026-10-22 16:42:46,693 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-26
+2026-10-22 16:42:46,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-27
+2026-10-22 16:42:46,890 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-28
+2026-10-22 16:42:46,994 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-29
+2026-10-22 16:42:47,095 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-30
+2026-10-22 16:42:47,195 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-31
+2026-10-22 16:42:47,294 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-32
+2026-10-22 16:42:47,394 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-33
+2026-10-22 16:42:47,495 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-34
+2026-10-22 16:42:47,595 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-35
+2026-10-22 16:42:47,694 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-36
+2026-10-22 16:42:47,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-37
+2026-10-22 16:42:47,894 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-38
+2026-10-22 16:42:47,994 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-39
+2026-10-22 16:42:48,094 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-40
+2026-10-22 16:42:48,194 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-41
+2026-10-22 16:42:48,294 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-42
+2026-10-22 16:42:48,394 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-43
+2026-10-22 16:42:48,492 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-44
+2026-10-22 16:42:48,592 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-45
+2026-10-22 16:42:48,693 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-46
+2026-10-22 16:42:48,793 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-47
+2026-10-22 16:42:48,894 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-48
+2026-10-22 16:42:48,991 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-49
+2026-10-22 16:42:49,092 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-50
+2026-10-22 16:42:49,190 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-51
+2026-10-22 16:42:49,295 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-52
+2026-10-22 16:42:49,396 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-53
+2026-10-22 16:42:49,495 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-54
+2026-10-22 16:42:49,594 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-55
+2026-10-22 16:42:49,695 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-56
+2026-10-22 16:42:49,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-57
+2026-10-22 16:42:49,892 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-58
+2026-10-22 16:42:49,995 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-59
+2026-10-22 16:42:50,095 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-60
+2026-10-22 16:42:50,193 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-61
+2026-10-22 16:42:50,290 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-62
+2026-10-22 16:42:50,395 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-63
+2026-10-22 16:42:50,492 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-64
+2026-10-22 16:42:50,594 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-65
+2026-10-22 16:42:50,694 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-66
+2026-10-22 16:42:50,795 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-67
+2026-10-22 16:42:50,894 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-68
+2026-10-22 16:42:50,994 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-69
+2026-10-22 16:42:51,094 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-70
+2026-10-22 16:42:51,194 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-71
+2026-10-22 16:42:51,295 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-72
+2026-10-22 16:42:51,392 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-73
+2026-10-22 16:42:51,494 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-74
+2026-10-22 16:42:51,594 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-75
+2026-10-22 16:42:51,690 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-76
+2026-10-22 16:42:51,795 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-77
+2026-10-22 16:42:51,894 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-78
+2026-10-22 16:42:51,989 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-79
+2026-10-22 16:42:52,094 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-80
+2026-10-22 16:42:52,190 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-81
+2026-10-22 16:42:52,294 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-82
+2026-10-22 16:42:52,392 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-83
+2026-10-22 16:42:52,495 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-84
+2026-10-22 16:42:52,594 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-85
+2026-10-22 16:42:52,690 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-86
+2026-10-22 16:42:52,791 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-87
+2026-10-22 16:42:52,894 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-88
+2026-10-22 16:42:52,990 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-89
+2026-10-22 16:42:53,094 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-90
+2026-10-22 16:42:53,195 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-91
+2026-10-22 16:42:53,295 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-92
+2026-10-22 16:42:53,394 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-93
+2026-10-22 16:42:53,494 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-94
+2026-10-22 16:42:53,593 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-95
+2026-10-22 16:42:53,689 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-96
+2026-10-22 16:42:53,794 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-97
+2026-10-22 16:42:53,896 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-98
+2026-10-22 16:42:53,994 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-99
+2026-10-22 16:42:54,090 INFO o.a.j.t.JMeterThread: Thread started: Concurrent reservations 1-100
+2026-10-22 16:43:00,001 INFO o.a.j.r.Summariser: summary +  26818 in 00:00:17 = 1620.0/s Avg:    40 Min:     0 Max:  2840 Err:     0 (0.00%) Active: 100 Started: 100 Finished: 0
+2026-10-22 16:43:30,000 INFO o.a.j.r.Summariser: summary +  57863 in 00:00:30 = 1928.8/s Avg:    51 Min:     0 Max:  3300 Err:     0 (0.00%) Active: 100 Started: 100 Finished: 0
+2026-10-22 16:43:30,001 INFO o.a.j.r.Summariser: summary =  84681 in 00:00:47 = 1819.0/s Avg:    48 Min:     0 Max:  3300 Err:     0 (0.00%)
+2026-10-22 16:43:44,202 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-5
+2026-10-22 16:43:44,202 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-5
+2026-10-22 16:43:44,210 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-38
+2026-10-22 16:43:44,210 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-38
+2026-10-22 16:43:44,211 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-6
+2026-10-22 16:43:44,211 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-6
+2026-10-22 16:43:44,213 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-24
+2026-10-22 16:43:44,213 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-24
+2026-10-22 16:43:44,214 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-30
+2026-10-22 16:43:44,214 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-30
+2026-10-22 16:43:44,215 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-44
+2026-10-22 16:43:44,215 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-44
+2026-10-22 16:43:44,216 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-84
+2026-10-22 16:43:44,216 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-2
+2026-10-22 16:43:44,216 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-84
+2026-10-22 16:43:44,216 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-2
+2026-10-22 16:43:44,217 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-66
+2026-10-22 16:43:44,217 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-66
+2026-10-22 16:43:44,218 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-40
+2026-10-22 16:43:44,218 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-40
+2026-10-22 16:43:44,219 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-83
+2026-10-22 16:43:44,219 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-83
+2026-10-22 16:43:44,224 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-43
+2026-10-22 16:43:44,224 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-43
+2026-10-22 16:43:44,225 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-97
+2026-10-22 16:43:44,225 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-97
+2026-10-22 16:43:44,226 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-19
+2026-10-22 16:43:44,226 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-19
+2026-10-22 16:43:44,227 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-55
+2026-10-22 16:43:44,227 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-55
+2026-10-22 16:43:44,231 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-21
+2026-10-22 16:43:44,231 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-100
+2026-10-22 16:43:44,231 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-21
+2026-10-22 16:43:44,231 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-100
+2026-10-22 16:43:44,232 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-47
+2026-10-22 16:43:44,232 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-47
+2026-10-22 16:43:44,233 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-58
+2026-10-22 16:43:44,233 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-58
+2026-10-22 16:43:44,234 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-39
+2026-10-22 16:43:44,234 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-39
+2026-10-22 16:43:44,235 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-16
+2026-10-22 16:43:44,235 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-16
+2026-10-22 16:43:44,238 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-62
+2026-10-22 16:43:44,238 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-72
+2026-10-22 16:43:44,238 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-62
+2026-10-22 16:43:44,238 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-72
+2026-10-22 16:43:44,241 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-36
+2026-10-22 16:43:44,241 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-36
+2026-10-22 16:43:44,242 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-74
+2026-10-22 16:43:44,242 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-74
+2026-10-22 16:43:44,242 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-86
+2026-10-22 16:43:44,243 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-86
+2026-10-22 16:43:44,243 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-20
+2026-10-22 16:43:44,243 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-20
+2026-10-22 16:43:44,244 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-15
+2026-10-22 16:43:44,244 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-15
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-91
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-94
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-91
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-94
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-1
+2026-10-22 16:43:44,245 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-1
+2026-10-22 16:43:44,246 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-49
+2026-10-22 16:43:44,246 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-49
+2026-10-22 16:43:44,247 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-51
+2026-10-22 16:43:44,247 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-13
+2026-10-22 16:43:44,247 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-51
+2026-10-22 16:43:44,247 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-13
+2026-10-22 16:43:44,248 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-45
+2026-10-22 16:43:44,248 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-95
+2026-10-22 16:43:44,248 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-95
+2026-10-22 16:43:44,248 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-45
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-3
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-42
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-3
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-28
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-28
+2026-10-22 16:43:44,249 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-42
+2026-10-22 16:43:44,255 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-87
+2026-10-22 16:43:44,256 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-87
+2026-10-22 16:43:44,258 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-25
+2026-10-22 16:43:44,258 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-25
+2026-10-22 16:43:44,259 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-85
+2026-10-22 16:43:44,259 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-85
+2026-10-22 16:43:44,259 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-48
+2026-10-22 16:43:44,259 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-48
+2026-10-22 16:43:44,260 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-18
+2026-10-22 16:43:44,260 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-18
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-7
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-7
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-9
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-27
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-9
+2026-10-22 16:43:44,261 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-27
+2026-10-22 16:43:44,262 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-80
+2026-10-22 16:43:44,262 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-80
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-96
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-96
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-46
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-46
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-26
+2026-10-22 16:43:44,263 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-26
+2026-10-22 16:43:44,264 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-88
+2026-10-22 16:43:44,264 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-88
+2026-10-22 16:43:44,264 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-61
+2026-10-22 16:43:44,264 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-61
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-31
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-14
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-31
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-14
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-17
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-59
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-17
+2026-10-22 16:43:44,265 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-59
+2026-10-22 16:43:44,267 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-99
+2026-10-22 16:43:44,267 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-99
+2026-10-22 16:43:44,268 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-98
+2026-10-22 16:43:44,268 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-98
+2026-10-22 16:43:44,268 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-4
+2026-10-22 16:43:44,268 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-4
+2026-10-22 16:43:44,269 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-65
+2026-10-22 16:43:44,269 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-65
+2026-10-22 16:43:44,269 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-90
+2026-10-22 16:43:44,269 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-90
+2026-10-22 16:43:44,270 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-76
+2026-10-22 16:43:44,270 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-76
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-63
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-63
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-41
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-81
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-41
+2026-10-22 16:43:44,271 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-81
+2026-10-22 16:43:44,288 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-50
+2026-10-22 16:43:44,288 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-50
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-29
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-57
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-29
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-57
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-77
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-79
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-22
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-79
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-75
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-93
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-75
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-77
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-22
+2026-10-22 16:43:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-93
+2026-10-22 16:43:44,290 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-60
+2026-10-22 16:43:44,290 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-60
+2026-10-22 16:43:44,291 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-33
+2026-10-22 16:43:44,291 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-33
+2026-10-22 16:43:44,291 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-10
+2026-10-22 16:43:44,291 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-10
+2026-10-22 16:43:44,292 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-23
+2026-10-22 16:43:44,292 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-23
+2026-10-22 16:43:44,292 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-8
+2026-10-22 16:43:44,292 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-8
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-92
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-92
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-56
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-56
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-89
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-89
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-73
+2026-10-22 16:43:44,293 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-73
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-54
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-54
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-37
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-32
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-37
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-32
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-69
+2026-10-22 16:43:44,294 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-69
+2026-10-22 16:43:44,295 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-82
+2026-10-22 16:43:44,295 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-82
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-78
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-64
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-78
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-70
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-64
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-71
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-71
+2026-10-22 16:43:44,296 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-70
+2026-10-22 16:43:44,297 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-35
+2026-10-22 16:43:44,297 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-35
+2026-10-22 16:43:44,298 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-11
+2026-10-22 16:43:44,298 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-11
+2026-10-22 16:43:44,298 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-53
+2026-10-22 16:43:44,298 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-53
+2026-10-22 16:43:44,331 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-12
+2026-10-22 16:43:44,331 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-12
+2026-10-22 16:43:44,334 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-68
+2026-10-22 16:43:44,334 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-68
+2026-10-22 16:43:44,345 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-67
+2026-10-22 16:43:44,345 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-67
+2026-10-22 16:43:44,354 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-52
+2026-10-22 16:43:44,354 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-52
+2026-10-22 16:43:44,392 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Concurrent reservations 1-34
+2026-10-22 16:43:44,393 INFO o.a.j.t.JMeterThread: Thread finished: Concurrent reservations 1-34
+2026-10-22 16:43:44,393 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-10-22 16:43:44,397 INFO o.a.j.r.Summariser: summary +  27906 in 00:00:14 = 1938.3/s Avg:    51 Min:     0 Max:  3911 Err:     0 (0.00%) Active: 0 Started: 100 Finished: 100
+2026-10-22 16:43:44,398 INFO o.a.j.r.Summariser: summary = 112587 in 00:01:01 = 1847.1/s Avg:    48 Min:     0 Max:  3911 Err:     0 (0.00%)

@@ -1,0 +1,6 @@
+target/
+inventory.db
+inventory.db-shm
+inventory.db-wal
+jmeter/results.jtl
+jmeter/report/
