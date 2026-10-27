@@ -1,0 +1,32 @@
+{
+  "audit_date": "2026-10-26",
+  "project": "sqlite-inventory",
+  "stack": ["Java 17", "Spring Boot 3.3.5", "Spring JDBC", "SQLite", "Maven", "JMeter"],
+  "findings": [
+    {
+      "id": "INV-001",
+      "severity": "Medium",
+      "category": "Boundary / functional correctness",
+      "component": "Reservation release",
+      "files": [
+        "src/main/java/com/example/inventory/mapper/ProductMapper.java",
+        "src/main/java/com/example/inventory/service/ProductService.java",
+        "src/test/java/com/example/inventory/ProductApiIntegrationTest.java"
+      ],
+      "description": "Stock release could exceed the Java int stock range because the SQL update did not enforce an upper bound.",
+      "root_cause": "The release UPDATE added any positive int quantity without checking whether the resulting stock remained representable by the API model.",
+      "impact": "Out-of-range persisted stock could produce inconsistent JDBC/API behavior.",
+      "fix": "Add an atomic upper-bound predicate and return 400 if the row exists but the release would exceed Integer.MAX_VALUE.",
+      "verification": "Regression test expects 400 and verifies stock remains unchanged at Integer.MAX_VALUE - 1.",
+      "status": "fixed; test added, execution blocked because no usable JDK/Maven is available"
+    }
+  ],
+  "validation": {
+    "diff_check": "not run: command environment fails before execution because Apple command-line developer tools are missing",
+    "xml_parse": "not run: command environment fails before execution because Apple command-line developer tools are missing",
+    "maven_tests": "not run: no usable Java runtime / Maven unavailable",
+    "dependency_scan": "not run: dependency resolution unavailable",
+    "performance_benchmark": "not run"
+  },
+  "limitations": ["Source-level review only", "Deployment topology and runtime behavior not independently verified", "No CI workflow found"]
+}

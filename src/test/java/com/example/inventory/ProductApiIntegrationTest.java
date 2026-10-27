@@ -143,4 +143,19 @@ class ProductApiIntegrationTest {
                 .content("{\"quantity\":0}"))
         .andExpect(status().isBadRequest());
   }
+
+  @Test
+  void releaseCannotOverflowSupportedStockRange() throws Exception {
+    jdbc.update("UPDATE products SET stock = ? WHERE id = ?", Integer.MAX_VALUE - 1, productId);
+
+    mvc.perform(
+            delete("/api/products/{id}/reservations", productId)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"quantity\":2}"))
+        .andExpect(status().isBadRequest());
+
+    org.junit.jupiter.api.Assertions.assertEquals(
+        Integer.MAX_VALUE - 1,
+        jdbc.queryForObject("SELECT stock FROM products WHERE id = ?", Integer.class, productId));
+  }
 }

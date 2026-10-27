@@ -45,7 +45,7 @@ Integration tests use a unique temporary SQLite database and exercise CRUD, vali
 
 ## JMeter pressure test
 
-Start the app, then run the plan. Its setup thread creates a product with one million units and passes the returned id to the concurrent threads, so it works with a fresh database and doesn't assume a particular row id. The test uses 100 concurrent threads for 60 seconds against atomic reservation. Expected responses are `200` and `409`.
+Start the app, then run the plan. Each virtual user creates its own product, exercises each of the eight endpoints in sequence, and deletes its product. Each sampler has a distinct label and an HTTP status assertion, so JMeter's Summary Report and HTML report show results for every API separately. The test uses 100 concurrent threads for 60 seconds.
 
 ```sh
 jmeter -n -t jmeter/inventory-stress.jmx -l jmeter/results.jtl -e -o jmeter/report
@@ -53,4 +53,39 @@ jmeter -n -t jmeter/inventory-stress.jmx -l jmeter/results.jtl -e -o jmeter/repo
 
 Change the JMeter `host` and `port` variables for a different target. Thread count and duration can also be changed with `-Jthreads=100 -Jduration=60`. The generated HTML report is in `jmeter/report`.
 
-Last verified with 100 threads for 60 seconds: 112,587 reservation samples, 0 errors, 1,847 requests/second, and 48 ms average response time.
+### Last all-API run
+
+100 threads, 60 seconds, 132,921 total samples, 0% errors. The per-endpoint values below are from the generated JMeter report; p95 is the 95th percentile response time.
+
+| API | Samples | Throughput/s | Avg ms | p95 ms | Errors |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `POST /api/products` create | 16,660 | 277.5 | 48.4 | 146 | 0% |
+| `GET /api/products` list | 16,647 | 280.1 | 42.7 | 133 | 0% |
+| `GET /api/products/{id}` read | 16,637 | 280.0 | 44.1 | 142 | 0% |
+| `PUT /api/products/{id}` update | 16,620 | 279.5 | 51.6 | 150 | 0% |
+| `POST /api/products/{id}/reservations` reserve | 16,604 | 279.4 | 50.1 | 148 | 0% |
+| `DELETE /api/products/{id}/reservations` release | 16,593 | 279.1 | 48.7 | 147 | 0% |
+| `GET /api/products/health` health | 16,580 | 279.2 | 0.2 | 1 | 0% |
+| `DELETE /api/products/{id}` delete | 16,580 | 278.7 | 45.2 | 144 | 0% |
+
+## Isolated endpoint and light end-to-end plan
+
+`jmeter/inventory-isolated-api-stress.jmx` runs each API in its own sequential thread group. It seeds a persistent fixture first, then runs single-endpoint load against existing data. Create uses a 100-thread concurrent insert burst; delete removes those uniquely created products with 100 concurrent delete requests. The final lifecycle group runs only 10 end-to-end users. Defaults are 100 threads for 20 seconds per sustained endpoint group, with a 5-second ramp; adjust them with `-Jthreads`, `-JisolatedDuration`, `-JrampTime`, `-JseedThreads`, and `-JfullChainThreads`.
+
+```sh
+jmeter -n -t jmeter/inventory-isolated-api-stress.jmx \
+  -l jmeter/isolated-results.jtl -e -o jmeter/report-isolated
+```
+
+Latest isolated run: 786,664 samples across setup, endpoint groups, and the light end-to-end group; 0 errors. Each endpoint group's isolated result is in the [HTML report](./jmeter/report-isolated/index.html) and summarized below (p95 is 95th percentile; create/delete are concurrent bursts, other API groups are sustained for 20 seconds).
+
+| API | Samples | Throughput/s | Avg ms | p95 ms | Errors |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `POST /api/products` create | 100 | 10.1 | 3.1 | 5 | 0% |
+| `GET /api/products` list | 61,697 | 3,075.5 | 28.3 | 162 | 0% |
+| `GET /api/products/{id}` read | 274,517 | 13,697.8 | 6.3 | 23 | 0% |
+| `PUT /api/products/{id}` update | 57,857 | 2,879.9 | 30.3 | 126 | 0% |
+| `POST /api/products/{id}/reservations` reserve | 30,984 | 1,538.2 | 56.6 | 174 | 0% |
+| `DELETE /api/products/{id}/reservations` release | 32,498 | 1,604.3 | 54.0 | 176 | 0% |
+| `GET /api/products/health` health | 328,830 | 16,416.1 | 5.3 | 6 | 0% |
+| `DELETE /api/products/{id}` delete | 100 | 10.1 | 2.5 | 4 | 0% |

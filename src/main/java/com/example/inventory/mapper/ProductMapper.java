@@ -67,6 +67,10 @@ public class ProductMapper {
   }
 
   public int releaseStock(long id, int quantity) {
-    return jdbc.update("UPDATE products SET stock = stock + ? WHERE id = ?", quantity, id);
+    return jdbc.update(
+        "UPDATE products SET stock = stock + ? WHERE id = ? AND stock <= ?",
+        quantity,
+        id,
+        Integer.MAX_VALUE - quantity);
   }
 }

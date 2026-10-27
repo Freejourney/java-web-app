@@ -1,0 +1,2 @@
+BUG-ID,Severity,Category,Component,Files,Description,Root cause,Impact,Fix,Verification,Status
+INV-001,Medium,"Boundary / functional correctness","Reservation release","ProductMapper.java; ProductService.java; ProductApiIntegrationTest.java","Release could exceed Java int stock range","Unbounded additive SQL update","Out-of-range stored stock can break API/JDBC representation","Atomic upper-bound predicate; distinguish overflow from missing product","Regression test checks HTTP 400 and unchanged stock","Fixed; test added; execution blocked by unavailable JDK/Maven"

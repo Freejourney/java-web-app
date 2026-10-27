@@ -5,12 +5,18 @@ import com.example.inventory.model.ProductRequest;
 import com.example.inventory.service.ProductService;
 import java.util.List;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
+
+  Logger logger = LoggerFactory.getLogger(ProductController.class);
+
   private final ProductService service;
 
   public ProductController(ProductService service) {
@@ -29,6 +35,7 @@ public class ProductController {
 
   @GetMapping("/{id}")
   public Product get(@PathVariable long id) {
+    logger.info("Getting product with id: {}", id);
     return service.get(id);
   }
 

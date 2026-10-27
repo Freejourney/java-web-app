@@ -49,7 +49,10 @@ public class ProductService {
 
   public Product release(long id, int quantity) {
     validateQuantity(quantity);
-    if (mapper.releaseStock(id, quantity) == 0) throw new ProductNotFoundException(id);
+    if (mapper.releaseStock(id, quantity) == 0) {
+      if (mapper.findById(id).isEmpty()) throw new ProductNotFoundException(id);
+      throw new InvalidRequestException("released stock exceeds the supported maximum");
+    }
     return get(id);
   }
 
