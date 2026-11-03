@@ -8,6 +8,13 @@ A small Spring Boot 3 application using the traditional controller â†’ service â
 - Maven 3.6+
 - Apache JMeter 5.6+
 
+## Dependencies
+
+The build uses Akka 2.6.20 (`akka-actor-typed`, `akka-slf4j`) for the actor layer. Akka 2.6.x is
+licensed under the Business Source License 1.1: free for development and non-production use, but a
+commercial license is required for production. If that is a constraint, Apache Pekko is the
+Apache-2.0 fork with the same API surface.
+
 ## Run
 
 ```sh
@@ -21,15 +28,48 @@ The app listens on `http://localhost:8080` and creates `inventory.db` in the cur
 | Method | Path | Behavior |
 | --- | --- | --- |
 | `POST` | `/api/products` | Create a product (`name`, `price`, `stock`) |
-| `GET` | `/api/products` | List products |
-| `GET` | `/api/products/{id}` | Read one product |
+| `GET` | `/api/products` | List products (through the actor) |
+| `GET` | `/api/products/{id}` | Read one product (through the actor) |
 | `PUT` | `/api/products/{id}` | Replace product fields |
 | `DELETE` | `/api/products/{id}` | Delete a product |
-| `POST` | `/api/products/{id}/reservations` | Reserve stock (`{"quantity": 1}`) |
-| `DELETE` | `/api/products/{id}/reservations` | Release stock (`{"quantity": 1}`) |
+| `POST` | `/api/products/{id}/reservations` | Reserve stock (`{"quantity": 1}`, through the actor) |
+| `DELETE` | `/api/products/{id}/reservations` | Release stock (`{"quantity": 1}`, through the actor) |
 | `GET` | `/api/products/health` | Liveness response |
+| `GET` | `/api/products/actor` | Actor diagnostics (stock operations, last failure) |
 
-Invalid input returns `400`, a missing product `404`, and insufficient stock `409`.
+Invalid input returns `400`, a missing product `404`, insufficient stock `409`, and an unreachable actor `503`.
+
+## Akka actor layer
+
+Reads and stock mutations run through a single typed Akka actor instead of calling `ProductService`
+directly. Create, update and delete keep using the service because they are independent
+single-statement writes; the actor owns the traffic whose correctness depends on ordering.
+
+- `ProductActor` processes one command at a time, so a stock read-modify-write cannot interleave
+  with another stock command. This mirrors the atomic conditional `UPDATE`, but adds serialization
+  of whole commands, so `POST /reservations` answers `200` with the post-reservation row rather than a
+  value a competing writer could have invalidated in between.
+- Commands and replies are sealed records in `ProductCommands`. Rejections travel back as
+  `StockReply.Failure` data rather than a thrown exception, which keeps the actor alive and lets the
+  controller rethrow the original API exception.
+- `ProductActorCoordinator` bridges the asynchronous ask pattern to the blocking Spring MVC
+  controllers with a five second timeout; a timeout or interrupted wait raises
+  `ProductActorUnavailableException`, which maps to `503`.
+- The actor is spawned on `akka.actor.default-blocking-io-dispatcher`, a dedicated thread pool. The
+  SQLite mapper waits on a database lock while a competing writer holds the write lock, and parking
+  those waits off the Akka default dispatcher keeps other actor work from starving.
+- The bean is supervised with `SupervisorStrategy.restart()`, so an unexpected mapper failure
+  restarts the actor instead of stopping it permanently.
+- `AkkaConfiguration` publishes the actor system and the actor as Spring beans;
+  `application.conf` routes Akka logging through the SLF4J backend Spring Boot already configures, so
+  Spring keeps reading `application.properties`.
+
+`GET /api/products/actor` exposes the actor's counters to verify the actor path is live:
+
+```sh
+curl http://localhost:8080/api/products/actor
+# {"status":"UP","lastFailure":"","stockOperations":0}
+```
 
 ## SQLite write locking
 
@@ -41,7 +81,7 @@ SQLite does not implement `SELECT ... FOR UPDATE`. Reservation uses one conditio
 mvn test
 ```
 
-Integration tests use a unique temporary SQLite database and exercise CRUD, validation, stock reservation/release, insufficient inventory, missing records, and health.
+Integration tests use a unique temporary SQLite database and exercise CRUD, validation, stock reservation/release, insufficient inventory, missing records, and health. `ProductActorIntegrationTest` additionally drives the actor path directly, including a concurrent reservation burst that must not oversell.
 
 ## JMeter pressure test
 

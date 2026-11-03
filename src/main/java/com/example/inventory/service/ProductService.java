@@ -6,6 +6,7 @@ import com.example.inventory.model.ProductRequest;
 import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductService {
@@ -18,6 +19,13 @@ public class ProductService {
   public Product create(ProductRequest request) {
     validate(request);
     return mapper.insert(request);
+  }
+
+  @Transactional
+  public Product createThenDelete(ProductRequest request, long id) {
+    Product created = create(request);
+    delete(id);
+    return created;
   }
 
   public List<Product> list() {

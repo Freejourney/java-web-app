@@ -1,11 +1,11 @@
 package com.example.inventory.controller;
 
+import com.example.inventory.actor.ProductActorCoordinator;
 import com.example.inventory.model.Product;
 import com.example.inventory.model.ProductRequest;
 import com.example.inventory.service.ProductService;
 import java.util.List;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,9 +18,11 @@ public class ProductController {
   Logger logger = LoggerFactory.getLogger(ProductController.class);
 
   private final ProductService service;
+  private final ProductActorCoordinator actor;
 
-  public ProductController(ProductService service) {
+  public ProductController(ProductService service, ProductActorCoordinator actor) {
     this.service = service;
+    this.actor = actor;
   }
 
   @PostMapping
@@ -28,15 +30,18 @@ public class ProductController {
     return service.create(request);
   }
 
+  /**
+   * Reads and stock mutations run through the product actor; see {@link ProductActorCoordinator}.
+   */
   @GetMapping
   public List<Product> list() {
-    return service.list();
+    return actor.list();
   }
 
   @GetMapping("/{id}")
   public Product get(@PathVariable long id) {
     logger.info("Getting product with id: {}", id);
-    return service.get(id);
+    return actor.get(id);
   }
 
   @PutMapping("/{id}")
@@ -52,17 +57,27 @@ public class ProductController {
 
   @PostMapping("/{id}/reservations")
   public Product reserve(@PathVariable long id, @RequestBody Map<String, Integer> body) {
-    return service.reserve(id, quantity(body));
+    return actor.reserve(id, quantity(body));
   }
 
   @DeleteMapping("/{id}/reservations")
   public Product release(@PathVariable long id, @RequestBody Map<String, Integer> body) {
-    return service.release(id, quantity(body));
+    return actor.release(id, quantity(body));
   }
 
   @GetMapping("/health")
   public Map<String, String> health() {
     return Map.of("status", "UP");
+  }
+
+  /** Surfaces the actor's own counters so the Akka path can be probed at runtime. */
+  @GetMapping("/actor")
+  public Map<String, Object> actor() {
+    var runtime = actor.status();
+    return Map.of(
+        "stockOperations", runtime.stockOperations(),
+        "lastFailure", runtime.lastFailure(),
+        "status", "UP");
   }
 
   private int quantity(Map<String, Integer> body) {

@@ -1,5 +1,6 @@
 package com.example.inventory.controller;
 
+import com.example.inventory.actor.ProductActorUnavailableException;
 import com.example.inventory.service.InsufficientStockException;
 import com.example.inventory.service.InvalidRequestException;
 import com.example.inventory.service.ProductNotFoundException;
@@ -26,6 +27,12 @@ public class ApiExceptionHandler {
   @ExceptionHandler(InvalidRequestException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public Map<String, String> badRequest(RuntimeException ex) {
+    return Map.of("error", ex.getMessage());
+  }
+
+  @ExceptionHandler(ProductActorUnavailableException.class)
+  @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+  public Map<String, String> actorUnavailable(RuntimeException ex) {
     return Map.of("error", ex.getMessage());
   }
 }

@@ -4,10 +4,16 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.example.inventory.model.Product;
+import com.example.inventory.model.ProductRequest;
+import com.example.inventory.service.ProductNotFoundException;
+import com.example.inventory.service.ProductService;
+import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +38,7 @@ class ProductApiIntegrationTest {
 
   @Autowired MockMvc mvc;
   @Autowired JdbcTemplate jdbc;
+  @Autowired ProductService service;
   private long productId;
 
   @BeforeEach
@@ -99,6 +106,25 @@ class ProductApiIntegrationTest {
         .andExpect(jsonPath("$.stock").value(8));
     mvc.perform(delete("/api/products/{id}", productId)).andExpect(status().isNoContent());
     mvc.perform(get("/api/products/{id}", productId)).andExpect(status().isNotFound());
+  }
+
+  @Test
+  void createThenDeleteIsAtomic() {
+    Product created =
+        service.createThenDelete(
+            new ProductRequest("Mouse", new BigDecimal("19.99"), 3), productId);
+
+    Assertions.assertEquals("Mouse", created.name());
+    Assertions.assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM products", Integer.class));
+    Assertions.assertEquals(
+        created.id(), jdbc.queryForObject("SELECT id FROM products", Long.class));
+
+    Assertions.assertThrows(
+        ProductNotFoundException.class,
+        () ->
+            service.createThenDelete(
+                new ProductRequest("Monitor", new BigDecimal("199.99"), 2), Long.MAX_VALUE));
+    Assertions.assertEquals(1, jdbc.queryForObject("SELECT COUNT(*) FROM products", Integer.class));
   }
 
   @Test

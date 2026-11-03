@@ -5,3 +5,9 @@ inventory.db-wal
 jmeter/results.jtl
 jmeter/report/
 jmeter/report-isolated/
+.gitignore
+.gitignore
+.idea/*
+.agents/*
+skills-lock.json
+jmeter.log
