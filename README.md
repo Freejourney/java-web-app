@@ -83,6 +83,17 @@ mvn test
 
 Integration tests use a unique temporary SQLite database and exercise CRUD, validation, stock reservation/release, insufficient inventory, missing records, and health. `ProductActorIntegrationTest` additionally drives the actor path directly, including a concurrent reservation burst that must not oversell.
 
+## GitHub Actions CI/CD
+
+`.github/workflows/ci-cd.yml` runs `mvn verify` for pull requests targeting `main`, pushes to
+`main`, version tags beginning with `v`, and manual runs. After tests pass, pushes and tag builds
+create and publish a Docker image to GitHub Container Registry (`ghcr.io/<owner>/<repository>`).
+The default branch also receives the `latest` tag; every build gets a commit SHA tag.
+
+The workflow uses the repository's `GITHUB_TOKEN`, so no registry password secret is needed. Ensure
+the repository's Actions setting allows workflows to read and write packages. The workflow publishes
+the image; connecting it to a running server still requires a deployment target and its credentials.
+
 ## JMeter pressure test
 
 Start the app, then run the plan. Each virtual user creates its own product, exercises each of the eight endpoints in sequence, and deletes its product. Each sampler has a distinct label and an HTTP status assertion, so JMeter's Summary Report and HTML report show results for every API separately. The test uses 100 concurrent threads for 60 seconds.
